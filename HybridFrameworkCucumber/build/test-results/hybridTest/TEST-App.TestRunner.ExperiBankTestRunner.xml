@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="App.TestRunner.ExperiBankTestRunner" tests="2" skipped="0" failures="1" errors="0" timestamp="2023-03-23T12:40:32" hostname="DESKTOP-257VOMS" time="31.825">
+  <properties/>
+  <testcase name="runScenario[0](&quot;user login&quot;, &quot;Optional[AppTest]&quot;)" classname="App.TestRunner.ExperiBankTestRunner" time="16.357"/>
+  <testcase name="runScenario[1](&quot;&quot;, &quot;Optional.empty&quot;)" classname="App.TestRunner.ExperiBankTestRunner" time="15.468">
+    <failure message="org.openqa.selenium.NoAlertPresentException: No alert is present on the screen&#10;Build info: version: '4.7.0', revision: '0a5b49d16f'&#10;System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_202'&#10;Driver info: io.appium.java_client.android.AndroidDriver&#10;Command: [6fdc501b-cebb-472e-8f2e-e816eb279168, getAlertText {}]&#10;Capabilities {appium:appActivity: .LoginActivity, appium:appPackage: com.experitest.ExperiBank, appium:databaseEnabled: false, appium:desired: {appActivity: .LoginActivity, appPackage: com.experitest.ExperiBank, deviceName: vivo 1818, platformName: android, platformVersion: 11.0, udid: 87beccc2}, appium:deviceApiLevel: 30, appium:deviceManufacturer: vivo, appium:deviceModel: vivo 1818, appium:deviceName: 87beccc2, appium:deviceScreenDensity: 480, appium:deviceScreenSize: 1080x2340, appium:deviceUDID: 87beccc2, appium:javascriptEnabled: true, appium:locationContextEnabled: false, appium:networkConnectionEnabled: true, appium:pixelRatio: 3, appium:platformVersion: 11, appium:statBarHeight: 84, appium:takesScreenshot: true, appium:udid: 87beccc2, appium:viewportRect: {height: 2130, left: 0, top: 84, width: 1080}, appium:warnings: {}, appium:webStorageEnabled: false, platformName: ANDROID}&#10;Session ID: 6fdc501b-cebb-472e-8f2e-e816eb279168" type="org.openqa.selenium.NoAlertPresentException">org.openqa.selenium.NoAlertPresentException: No alert is present on the screen
+Build info: version: '4.7.0', revision: '0a5b49d16f'
+System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_202'
+Driver info: io.appium.java_client.android.AndroidDriver
+Command: [6fdc501b-cebb-472e-8f2e-e816eb279168, getAlertText {}]
+Capabilities {appium:appActivity: .LoginActivity, appium:appPackage: com.experitest.ExperiBank, appium:databaseEnabled: false, appium:desired: {appActivity: .LoginActivity, appPackage: com.experitest.ExperiBank, deviceName: vivo 1818, platformName: android, platformVersion: 11.0, udid: 87beccc2}, appium:deviceApiLevel: 30, appium:deviceManufacturer: vivo, appium:deviceModel: vivo 1818, appium:deviceName: 87beccc2, appium:deviceScreenDensity: 480, appium:deviceScreenSize: 1080x2340, appium:deviceUDID: 87beccc2, appium:javascriptEnabled: true, appium:locationContextEnabled: false, appium:networkConnectionEnabled: true, appium:pixelRatio: 3, appium:platformVersion: 11, appium:statBarHeight: 84, appium:takesScreenshot: true, appium:udid: 87beccc2, appium:viewportRect: {height: 2130, left: 0, top: 84, width: 1080}, appium:warnings: {}, appium:webStorageEnabled: false, platformName: ANDROID}
+Session ID: 6fdc501b-cebb-472e-8f2e-e816eb279168
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:53)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:184)
+	at io.appium.java_client.remote.AppiumCommandExecutor.execute(AppiumCommandExecutor.java:262)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:541)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:596)
+	at io.appium.java_client.AppiumDriver.execute(AppiumDriver.java:272)
+	at org.openqa.selenium.remote.RemoteWebDriver$RemoteTargetLocator.alert(RemoteWebDriver.java:1078)
+	at App.POM.AppElements.AlertForPayment(AppElements.java:79)
+	at App.StepDefinition.EB2MakePaymentStepDefs.userClosesTheAlertSelectingOkAndConfirmsPayment(EB2MakePaymentStepDefs.java:39)
+	at ✽.user closes the alert selecting ok and confirms payment(file:///F:/HybridFrameworkCucumber/src/test/resources/Feature/App/EB2MakePayment.feature:9)
+</failure>
+  </testcase>
+  <system-out><![CDATA[
+@login
+Scenario Outline: user login              # src/test/resources/Feature/App/EB1Login.feature:11
+  Given app apk is there                  # App.StepDefinition.EB1LoginStepDefs.appApkIsThere()
+  When user enters 'company'and 'company' # App.StepDefinition.EB1LoginStepDefs.userEntersUsernameAndPass(java.lang.String,java.lang.String)
+Ta Da!!
+  Then user will navigate to home screen  # App.StepDefinition.EB1LoginStepDefs.userWillNavigateToHomeScreen()
+
+@makePayment
+Scenario Outline:                                              # src/test/resources/Feature/App/EB2MakePayment.feature:12
+  Given user clicks on thr make payment tab                    # App.StepDefinition.EB2MakePaymentStepDefs.userClicksOnThrMakePaymentTab()
+  When user inserts '12345' and 'john' and '100'               # App.StepDefinition.EB2MakePaymentStepDefs.userInsertsPhoneAndNameAndAmount(java.lang.String,java.lang.String,java.lang.String)
+  And user selects country                                     # App.StepDefinition.EB2MakePaymentStepDefs.userSelectsCountry()
+  And user clicks on send payment button                       # App.StepDefinition.EB2MakePaymentStepDefs.userClicksOnSendPaymentButton()
+  Then user closes the alert selecting ok and confirms payment # App.StepDefinition.EB2MakePaymentStepDefs.userClosesTheAlertSelectingOkAndConfirmsPayment()
+      org.openqa.selenium.NoAlertPresentException: No alert is present on the screen
+Build info: version: '4.7.0', revision: '0a5b49d16f'
+System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_202'
+Driver info: io.appium.java_client.android.AndroidDriver
+Command: [6fdc501b-cebb-472e-8f2e-e816eb279168, getAlertText {}]
+Capabilities {appium:appActivity: .LoginActivity, appium:appPackage: com.experitest.ExperiBank, appium:databaseEnabled: false, appium:desired: {appActivity: .LoginActivity, appPackage: com.experitest.ExperiBank, deviceName: vivo 1818, platformName: android, platformVersion: 11.0, udid: 87beccc2}, appium:deviceApiLevel: 30, appium:deviceManufacturer: vivo, appium:deviceModel: vivo 1818, appium:deviceName: 87beccc2, appium:deviceScreenDensity: 480, appium:deviceScreenSize: 1080x2340, appium:deviceUDID: 87beccc2, appium:javascriptEnabled: true, appium:locationContextEnabled: false, appium:networkConnectionEnabled: true, appium:pixelRatio: 3, appium:platformVersion: 11, appium:statBarHeight: 84, appium:takesScreenshot: true, appium:udid: 87beccc2, appium:viewportRect: {height: 2130, left: 0, top: 84, width: 1080}, appium:warnings: {}, appium:webStorageEnabled: false, platformName: ANDROID}
+Session ID: 6fdc501b-cebb-472e-8f2e-e816eb279168
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:53)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:184)
+	at io.appium.java_client.remote.AppiumCommandExecutor.execute(AppiumCommandExecutor.java:262)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:541)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:596)
+	at io.appium.java_client.AppiumDriver.execute(AppiumDriver.java:272)
+	at org.openqa.selenium.remote.RemoteWebDriver$RemoteTargetLocator.alert(RemoteWebDriver.java:1078)
+	at App.POM.AppElements.AlertForPayment(AppElements.java:79)
+	at App.StepDefinition.EB2MakePaymentStepDefs.userClosesTheAlertSelectingOkAndConfirmsPayment(EB2MakePaymentStepDefs.java:39)
+	at âœ½.user closes the alert selecting ok and confirms payment(file:///F:/HybridFrameworkCucumber/src/test/resources/Feature/App/EB2MakePayment.feature:9)
+
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
